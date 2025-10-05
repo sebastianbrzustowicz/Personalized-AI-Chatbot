@@ -5,8 +5,8 @@ from typing import List, Dict
 from ctransformers import AutoModelForCausalLM, AutoConfig
 
 # Change the path to the model if it is different
-#DEFAULT_MODEL_PATH = "./llm_models/llama-2-7b-chat.Q4_K_M/llama-2-7b-chat.Q4_K_M.gguf"
-DEFAULT_MODEL_PATH = "./llm_models/bielik_Q6/bielik-7b-instruct-v0.1.Q6_K.gguf"
+DEFAULT_MODEL_PATH = "./llm_models/llama-2-7b-chat.Q4_K_M/llama-2-7b-chat.Q4_K_M.gguf"
+#DEFAULT_MODEL_PATH = "./llm_models/bielik_Q6/bielik-7b-instruct-v0.1.Q6_K.gguf"
 
 class RAGPipeline:
     def __init__(self,
@@ -130,6 +130,7 @@ class RAGPipeline:
 
         # 4) generate
         answer = self.generate(prompt)
+        print(answer)
         return {
             "answer": answer,
             "retrieved": retrieved,
