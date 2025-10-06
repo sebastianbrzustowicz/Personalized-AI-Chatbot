@@ -1,18 +1,8 @@
-/* header */
-.rcw-conversation-container .rcw-header {
-  background-color: #458447 !important;
-  color: white !important;
-}
-
-/* client text */
-.rcw-client .rcw-message-text {
-  background-color: #458447 !important;
-  color: white !important;
-}
-
-/* launcher */
+.rcw-conversation-container .rcw-header,
+.rcw-client .rcw-message-text,
 .rcw-launcher {
   background-color: #458447 !important;
+  color: white !important;
 }
 
 .rcw-widget-container .rcw-header {
@@ -23,7 +13,7 @@
 }
 
 .rcw-title {
-  padding: 5px 0px !important;
+  padding: 5px 0 !important;
 }
 
 .rcw-widget-container {
@@ -32,36 +22,27 @@
 }
 
 .rcw-message-text {
-  max-width: 245px !important;
-}
-
-/* AIChatWindow.css */
-
-/* Text in messages AI */
-.rcw-message-text {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   white-space: pre-wrap;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  max-width: 100%;
+  max-width: 245px !important;
   box-sizing: border-box;
 }
 
-/* Handling <pre> i <code> elements inside messages */
 .rcw-message-text pre,
 .rcw-message-text code {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  overflow-x: auto; /* scroll horizontally if line is too long */
-  white-space: pre-wrap; /* break line inside <pre> */
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  overflow-x: auto;
+  white-space: pre-wrap;
   word-wrap: break-word;
   max-width: 100%;
 }
 
-/* Lists in messages */
 .rcw-message-text ol,
 .rcw-message-text li {
   margin: 0;
