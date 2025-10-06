@@ -1,37 +1,53 @@
 import { useState, useCallback } from "react";
 
-interface AIResponse {
+export interface AIResponse {
   answer: string;
-  retrieved: any[];
+  retrieved: Array<{ id: string; source: string; text_snippet: string }>;
 }
 
-const useAIChat = (endpoint: string) => {
+interface UseAIChatOptions {
+  onResponse?: (data: AIResponse) => void;
+  onError?: (error: Error) => void;
+}
+
+const useAIChat = (endpoint: string, options?: UseAIChatOptions) => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const sendMessage = useCallback(async (message: string): Promise<string> => {
-    setLoading(true);
-    try {
-      const response = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: message }),
-      });
+  const sendMessage = useCallback(
+    async (message: string): Promise<string> => {
+      setLoading(true);
+      setError(null);
 
-      if (!response.ok) {
-        throw new Error(`Server error: ${response.status}`);
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question: message }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Server error: ${response.status}`);
+        }
+
+        const data: AIResponse = await response.json();
+
+        options?.onResponse?.(data);
+
+        return data.answer;
+      } catch (err: any) {
+        const message = err?.message || "Unknown error";
+        setError(message);
+        options?.onError?.(err);
+        return "Oops, something went wrong!";
+      } finally {
+        setLoading(false);
       }
+    },
+    [endpoint, options]
+  );
 
-      const data: AIResponse = await response.json();
-      return data.answer; // Only answer attribute
-    } catch (err) {
-      console.error("AI request failed:", err);
-      return "Oops, something went wrong!";
-    } finally {
-      setLoading(false);
-    }
-  }, [endpoint]);
-
-  return { sendMessage, loading };
+  return { sendMessage, loading, error };
 };
 
 export default useAIChat;
