@@ -11,7 +11,8 @@ An end-to-end AI assistant with Retrieval-Augmented Generation, designed for sea
 The architecture is quite simple and modular, making it easy to reuse individual components 
 or integrate the chatbot into other projects with minimal setup.
 ```
-User → React Frontend → FastAPI (backend) → RAG Pipeline → Embeddings via SentenceTransformers → Vector Store (ChromaDB) → LLM Response
+User → React Frontend → FastAPI (backend) → RAG Pipeline 
+  → Embeddings via SentenceTransformers → Vector Store (ChromaDB) → LLM Response
 ```
 
 ## Project structure
