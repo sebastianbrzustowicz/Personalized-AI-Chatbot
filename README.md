@@ -7,10 +7,15 @@ An end-to-end AI assistant with Retrieval-Augmented Generation, designed for sea
   <img src="screenshots/chatbot_3.png" style="width: 32%;" />
 </p>
 
-
+## Architecture
+The architecture is quite simple and modular, making it easy to reuse individual components 
+or integrate the chatbot into other projects with minimal setup.
+```
+User → React Frontend → FastAPI (backend) → RAG Pipeline → Embeddings via SentenceTransformers → Vector Store (ChromaDB) → LLM Response
+```
 
 ## Project structure
-```
+``` yaml
 Personalized-AI-Chatbot/
 ├── backend/
 │   ├── main.py                     # FastAPI entrypoint, starts the server
@@ -31,6 +36,7 @@ Personalized-AI-Chatbot/
 │   │   └── health.py               # /health endpoint for health checks
 │   ├── services/
 │   │   └── rag_service.py          # Singleton RAGPipeline init for DI
+│   ├── Dockerfile                  # Dockerization instructions
 │   ├── requirements.txt            # Backend Python dependencies
 │   └── server.py                   # Optional server startup logic (uvicorn)
 ├── data/
@@ -46,6 +52,7 @@ Personalized-AI-Chatbot/
 │   ├── styles/
 │   │   │   AIChatLoader.css        # Loader-specific styles
 │   │   └── AIChatWindow.css        # Chat window styles
+│   ├── Dockerfile                  # Dockerization instructions
 │   └── main.tsx                    # Frontend entrypoint
 ├── llm-models/
 │   └── ...                         # Local LLM model files (gguf, pt, bin)
@@ -54,7 +61,27 @@ Personalized-AI-Chatbot/
 ├── LICENSE                         # Project license
 ├── README.md                       # Project documentation
 └── docker-compose.yml              # Docker compose for backend/frontend
+```
 
+## Key features
+- 🧠 Retrieval-Augmented Generation (RAG) — combines document search with LLM reasoning
+- 📄 Multi-format data ingestion — supports .pdf, .txt, .docx, .html
+- ⚡ Local vector store using ChromaDB for efficient retrieval
+- 🧩 Plug-and-play model loading (local GGUF or HuggingFace models)
+- 🖥️ Interactive React frontend with live chat interface
+- 🐳 Fully containerized (Docker + Compose) for consistent deployment
+- 🔌 Seamless integration — drop-in React component (AIChatWindow) can be easily copied
+into other web project
+
+## Installation / Local Setup
+Instructions step-by-step:
+```bash
+# Clone repository
+git clone https://github.com/sebastianbrzustowicz/Personalized-AI-Chatbot.git
+cd Personalized-AI-Chatbot
+
+# Run containers
+docker compose up --build
 ```
 
 ## License
@@ -64,3 +91,4 @@ Personalized-AI-Chatbot is released under the MIT license.
 ## Author
 
 Sebastian Brzustowicz &lt;Se.Brzustowicz@gmail.com&gt;
+
