@@ -59,9 +59,9 @@ Personalized-AI-Chatbot/
 │   └── ...                         # Local LLM model files (gguf, pt, bin)
 ├── screenshots/                    # Screenshots for README/docs
 ├── .gitignore                      # Git ignore rules
+├── docker-compose.yml              # Docker compose for backend/frontend
 ├── LICENSE                         # Project license
-├── README.md                       # Project documentation
-└── docker-compose.yml              # Docker compose for backend/frontend
+└── README.md                       # Project documentation
 ```
 
 ## Key features
