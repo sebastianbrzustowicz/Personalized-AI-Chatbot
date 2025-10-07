@@ -80,10 +80,23 @@ Instructions step-by-step:
 # Clone repository
 git clone https://github.com/sebastianbrzustowicz/Personalized-AI-Chatbot.git
 cd Personalized-AI-Chatbot
+```
+1️⃣ Add your LLM model  
+Place your model file in /llm-models/ and set its path in
+backend/rag/pipeline.py, e.g.:
+```bash
+self.llm = LocalLLM(model_path or "./llm_models/llama-2-7b-chat.Q4_K_M/llama-2-7b-chat.Q4_K_M.gguf")
+```
+2️⃣ Add your documents  
+Put your source files (PDF, TXT, DOCX, etc.) into /data/docs/.
 
+3️⃣ Run the app
+```bash
 # Run containers
 docker compose up --build
 ```
+Then open http://localhost:8000
+ in your browser.
 
 ## License
 
