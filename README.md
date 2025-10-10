@@ -84,7 +84,7 @@ cd Personalized-AI-Chatbot
 1️⃣ Add your LLM model  
 Place your model file in /llm-models/ and set its path in
 backend/rag/pipeline.py, e.g.:
-```bash
+```python
 self.llm = LocalLLM(model_path or "./llm_models/llama-2-7b-chat.Q4_K_M/llama-2-7b-chat.Q4_K_M.gguf")
 ```
 2️⃣ Add your documents  

@@ -1,5 +1,8 @@
 llm_models/*
-data/*
+!llm_models/.gitkeep
+
+data/docs/*
+!data/docs/.gitkeep
 
 __pycache__/
 **/__pycache__/
