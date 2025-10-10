@@ -1,5 +1,5 @@
-llm_models/
-data/
+llm_models/*
+data/*
 
 __pycache__/
 **/__pycache__/
