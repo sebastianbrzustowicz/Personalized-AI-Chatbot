@@ -1,19 +1,89 @@
-.rcw-conversation-container .rcw-header,
-.rcw-client .rcw-message-text,
-.rcw-launcher {
-  background-color: #458447 !important;
+.rcw-conversation-container {
+  background-color: #252331 !important;
   color: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6) !important;
 }
 
-.rcw-widget-container .rcw-header {
-  height: 60px !important;
-  padding: 5px 10px !important;
-  font-size: 0.9rem !important;
-  line-height: 1.2 !important;
+.rcw-conversation-container .rcw-header {
+  background-color: #343147 !important;
+  color: white !important;
+  border-bottom: 1px solid #3b394a !important;
+  height: 20px;
 }
 
 .rcw-title {
-  padding: 5px 0 !important;
+  font-weight: bold !important;
+  letter-spacing: 0.5px !important;
+  padding: 2px !important;
+}
+
+.rcw-subtitle {
+  color: #9c99aa !important;
+}
+
+.rcw-launcher {
+  background-color: #0182ff !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4) !important;
+}
+.rcw-launcher:hover {
+  background-color: #3d9aff !important;
+}
+
+.rcw-message {
+  color: white !important;
+}
+
+.rcw-client .rcw-message-text {
+  background-color: #0182ff !important;
+  color: white !important;
+}
+
+.rcw-response .rcw-message-text {
+  background-color: #343147 !important;
+  color: white !important;
+}
+
+.rcw-message-text {
+  font-family: "Inter", Arial, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  max-width: 245px !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  border-radius: 10px !important;
+}
+
+.rcw-sender {
+  background-color: #1e1c28 !important;
+  border-top: 1px solid #3b394a !important;
+}
+
+.rcw-new-message {
+  background-color: transparent !important;
+  color: white !important;
+  padding-left: 10px !important;
+}
+
+.rcw-new-message::placeholder {
+  color: #8e8c9c !important;
+}
+
+.rcw-send {
+  background-color: #1e1c28 !important;
+  color: #0182ff !important;
+  transition: background 0.2s;
+}
+.rcw-send:hover {
+  color: white !important;
+}
+
+.rcw-timestamp {
+  color: #8e8c9c !important;
+}
+
+.rcw-close-button {
+  color: white !important;
 }
 
 .rcw-widget-container {
@@ -21,30 +91,10 @@
   max-width: 400px !important;
 }
 
-.rcw-message-text {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 245px !important;
-  box-sizing: border-box;
+.rcw-messages-container {
+  background-color: #242230 !important;
 }
 
-.rcw-message-text pre,
-.rcw-message-text code {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  max-width: 100%;
-}
-
-.rcw-message-text ol,
-.rcw-message-text li {
-  margin: 0;
-  padding-left: 1.2em;
+.rcw-picker-btn {
+  display: none !important;
 }

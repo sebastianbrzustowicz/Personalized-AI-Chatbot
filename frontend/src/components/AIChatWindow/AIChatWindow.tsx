@@ -3,7 +3,7 @@ import { Widget, addResponseMessage, renderCustomComponent, toggleInputDisabled,
 import "react-chat-widget/lib/styles.css";
 
 import "./styles/AIChatWindow.css";
-import robotAvatar from "./resources/robot-24.png";
+import chatbotAvatar from "../../assets/ai_icon.png";
 import useAIChat from "./hooks/useAIChat";
 import AIChatLoader from "./AIChatLoader";
 
@@ -35,12 +35,12 @@ const AIChatWindow = () => {
   return (
     <Widget
       handleNewUserMessage={handleNewUserMessage}
-      title="AI Assistant"
-      subtitle="🟢 Online"
-      profileAvatar={robotAvatar}
+      title="AI Assistant 🟢"
+      subtitle={null}
+      profileAvatar={chatbotAvatar}
       launcherOpenLabel="Talk to AI"
       showTimeStamp
-      launcherAccentColor="#458447"
+      launcherAccentColor="#0182ff"
       senderPlaceHolder="Type your message..."
     />
   );

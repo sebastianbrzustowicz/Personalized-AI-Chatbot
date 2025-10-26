@@ -1,11 +1,38 @@
 # Personalized-AI-Chatbot
 An end-to-end AI assistant with Retrieval-Augmented Generation, designed for seamless integration with other projects.
 
-<p style="display: flex; justify-content: space-between;">
-  <img src="screenshots/chatbot_1.png" style="width: 32%;" />
-  <img src="screenshots/chatbot_2.png" style="width: 32%;" />
-  <img src="screenshots/chatbot_3.png" style="width: 32%;" />
-</p>
+<figure>
+  <p style="display: flex; justify-content: space-between;">
+    <img src="images/react_1.png" style="width: 32%;" />
+    <img src="images/react_2.png" style="width: 32%;" />
+    <img src="images/react_3.png" style="width: 32%;" />
+  </p>
+  <figcaption style="text-align: center;">
+    React implementation - Night Mode
+  </figcaption>
+</figure>
+
+<figure>
+  <p style="display: flex; justify-content: space-between;">
+    <img src="images/chatbot_1.png" style="width: 32%;" />
+    <img src="images/chatbot_2.png" style="width: 32%;" />
+    <img src="images/chatbot_3.png" style="width: 32%;" />
+  </p>
+  <figcaption style="text-align: center;">
+    React implementation - Light Mode
+  </figcaption>
+</figure>
+
+<figure>
+  <p style="display: flex; justify-content: space-between;">
+    <img src="images/vanilla_1.png" style="width: 32%;" />
+    <img src="images/vanilla_2.png" style="width: 32%;" />
+    <img src="images/vanilla_3.png" style="width: 32%;" />
+  </p>
+  <figcaption style="text-align: center;">
+    Vanilla JavaScript
+  </figcaption>
+</figure>
 
 ## Architecture
 The architecture is quite simple and modular, making it easy to reuse individual components 
